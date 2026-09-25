@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trade With Gautam | Official Telegram Channel</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '907822495540665');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=907822495540665&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -296,7 +315,7 @@
         </div>
 
         <!-- Main CTA Button -->
-        <a href="https://t.me/+I97Bpc3iIgo2OGY9" target="_blank" class="btn-telegram">
+        <a href="https://t.me/+I97Bpc3iIgo2OGY9" target="_blank" class="btn-telegram tg-link">
             <i class="fa-brands fa-telegram" style="font-size: 24px;"></i>
             JOIN TELEGRAM CHANNEL
         </a>
@@ -349,13 +368,14 @@
 
     <!-- Sticky Bottom Bar -->
     <div class="sticky-bar">
-        <a href="https://t.me/+I97Bpc3iIgo2OGY9" target="_blank" class="sticky-btn">
+        <a href="https://t.me/+I97Bpc3iIgo2OGY9" target="_blank" class="sticky-btn tg-link">
             <i class="fa-brands fa-telegram"></i> JOIN NOW FOR FREE
         </a>
     </div>
 
-    <!-- Timer Script -->
+    <!-- Timer & Meta Pixel Event Tracking Script -->
     <script>
+        // Countdown Timer
         let timeLeft = 299; // 5 mins
         const timerElement = document.getElementById('timer');
 
@@ -368,6 +388,15 @@
             timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
             timeLeft--;
         }, 1000);
+
+        // Track Telegram Clicks in Meta Pixel
+        document.querySelectorAll('.tg-link').forEach(button => {
+            button.addEventListener('click', function() {
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Subscribe');
+                }
+            });
+        });
     </script>
 </body>
 </html>
